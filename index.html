@@ -1,387 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diana Artemisa Sepúlveda | QA Automation Tester</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diana Artemisa Sepúlveda | QA Automation Tester</title>
 
-  <style>
-    :root{
-      --bg:#fbfbfd; --surface:#fff; --text:#111827; --muted:#6b7280; --border:#ececf3;
-      --accent:#e11d48; --accent-soft:#fce7f3; --accent-2:#a855f7;
-      --shadow:0 10px 30px rgba(17,24,39,.06); --shadow-soft:0 6px 18px rgba(17,24,39,.06);
-      --radius:16px; --radius-sm:12px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% -10%, var(--accent-soft), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(168,85,247,0.08), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
+<style>
+:root{
+  --bg:#fbfbfd;
+  --surface:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#ececf3;
+  --accent:#e11d48;
+  --accent-soft:#fce7f3;
+  --accent-2:#a855f7;
+  --shadow:0 10px 30px rgba(17,24,39,.06);
+  --shadow-soft:0 6px 18px rgba(17,24,39,.06);
+  --radius:16px;
+}
 
-    .container{max-width:980px;margin:0 auto;padding:44px 18px 70px}
+*{box-sizing:border-box}
 
-    .hero{
-      background:linear-gradient(180deg,rgba(252,231,243,.70),rgba(255,255,255,.92));
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius);
-      padding:28px 26px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:-120px -120px auto auto;
-      width:260px;height:260px;
-      background:radial-gradient(circle at 30% 30%,rgba(225,29,72,.18),transparent 60%);
-      transform:rotate(10deg);
-      pointer-events:none;
-    }
-    .hero-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;justify-content:space-between}
-    h1{margin:0;font-size:34px;letter-spacing:-0.02em}
-    .subtitle{margin:6px 0 0;font-size:16px;color:var(--muted)}
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, var(--accent-soft), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(168,85,247,.08), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    .pill-row{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.85);
-      box-shadow:var(--shadow-soft);
-      font-size:14px;color:var(--text);
-    }
-    .pill .dot{
-      width:10px;height:10px;border-radius:999px;background:var(--accent);
-      box-shadow:0 0 0 4px rgba(225,29,72,.12);
-    }
+.container{
+  max-width:980px;
+  margin:0 auto;
+  padding:44px 18px 70px;
+}
 
-    .cta-row{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+/* HERO */
+.hero{
+  background:linear-gradient(180deg,rgba(252,231,243,.70),rgba(255,255,255,.92));
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+  padding:28px 26px;
+}
 
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:10px 14px;border-radius:12px;
-      border:1px solid var(--border);
-      background:var(--surface);
-      box-shadow:var(--shadow-soft);
-      font-size:14px;color:var(--text);
-      transition:transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
-      cursor:pointer;
-    }
-    .btn.primary{
-      border-color:rgba(225,29,72,.28);
-      background:linear-gradient(180deg,rgba(225,29,72,.12),rgba(255,255,255,.92));
-      color:#7a0b2b;font-weight:600;
-    }
-    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow);text-decoration:none}
-    .btn.sm{padding:9px 12px;border-radius:11px;font-size:13.5px}
+h1{margin:0;font-size:34px}
+.subtitle{margin:6px 0 0;font-size:16px;color:var(--muted)}
 
-    .section{margin-top:28px}
-    .section h2{
-      margin:26px 0 12px;font-size:18px;letter-spacing:-0.01em;color:var(--text);
-      display:flex;align-items:center;gap:10px
-    }
-    .section h2::before{
-      content:"";width:10px;height:10px;border-radius:3px;background:var(--accent);
-      box-shadow:0 0 0 5px rgba(225,29,72,.10);
-    }
+.pill-row{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.pill{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:14px;
+}
 
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  box-shadow:var(--shadow-soft);
+  font-size:14px;
+  cursor:pointer;
+  transition:.15s ease;
+  text-decoration:none;
+  color:var(--text);
+}
 
-    .card{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-soft);
-      padding:18px 18px 16px;
-    }
-    .card:hover{box-shadow:var(--shadow);transition:140ms ease}
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:var(--shadow);
+}
 
-    /* Align cards */
-    .card.equal{display:flex;flex-direction:column;height:100%}
-    .card .push-bottom{margin-top:auto}
+.btn.primary{
+  background:linear-gradient(180deg,rgba(225,29,72,.15),rgba(255,255,255,.92));
+  border-color:rgba(225,29,72,.4);
+  font-weight:700;
+  color:#7a0b2b;
+}
 
-    .col-12{grid-column:span 12}
-    .col-6{grid-column:span 6}
-    .col-4{grid-column:span 4}
-    @media (max-width:860px){
-      .col-6,.col-4{grid-column:span 12}
-      h1{font-size:30px}
-    }
+.btn.repo{
+  background:rgba(252,231,243,.65);
+  border-color:rgba(225,29,72,.3);
+  font-weight:600;
+  color:#7a0b2b;
+}
 
-    .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-    .card h3{margin:0 0 6px;font-size:16px;letter-spacing:-0.01em}
-    .meta{margin:0 0 10px;color:var(--muted);font-size:14px}
+.btn.sm{
+  padding:8px 12px;
+  font-size:13px;
+}
 
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .tag{
-      display:inline-flex;align-items:center;
-      padding:6px 10px;border-radius:999px;font-size:12.5px;
-      border:1px solid var(--border);
-      background:rgba(252,231,243,.55);
-      color:#7a0b2b;
-    }
-    .tag.alt{background:rgba(168,85,247,.10);color:#4c1d95}
+.cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
 
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:6px 0}
+/* Sections */
+.section{margin-top:36px}
+.section h2{
+  font-size:18px;
+  margin-bottom:14px;
+}
 
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:860px){.two-col{grid-template-columns:1fr}}
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;
+}
 
-    .footer{margin-top:42px;color:var(--muted);font-size:13px;text-align:center}
-    .muted{color:var(--muted)}
-  </style>
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  min-height:260px;
+}
+
+.card h3{margin:0 0 8px;font-size:16px}
+.meta{color:var(--muted);font-size:14px}
+
+.push-bottom{margin-top:auto}
+
+/* Columns */
+.col-12{grid-column:span 12}
+.col-6{grid-column:span 6}
+.col-4{grid-column:span 4}
+
+@media(max-width:860px){
+  .col-6,.col-4{grid-column:span 12}
+}
+
+/* Tags */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+
+.tag{
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  border:1px solid var(--border);
+  background:rgba(252,231,243,.55);
+  color:#7a0b2b;
+}
+
+.tag.alt{
+  background:rgba(168,85,247,.1);
+  color:#4c1d95;
+}
+
+.footer{
+  margin-top:50px;
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <section class="hero">
-      <div class="hero-top">
-        <div>
-          <h1>Diana Artemisa Sepúlveda Patiño</h1>
-          <p class="subtitle"><strong>QA Automation Tester (Hybrid)</strong> · Cypress · JavaScript/TypeScript</p>
-          <p class="subtitle">Colima, Mexico · Open to Remote · English: Intermediate</p>
-        </div>
-      </div>
+<section class="hero">
+<h1>Diana Artemisa Sepúlveda Patiño</h1>
+<p class="subtitle"><strong>QA Automation Tester (Hybrid)</strong></p>
+<p class="subtitle">Colima, Mexico · English: Intermediate</p>
 
-      <div class="pill-row">
-        <span class="pill"><span class="dot"></span>Hybrid QA (Manual + Automation)</span>
-        <span class="pill"><span class="dot"></span>Data Validation (SQL / Excel)</span>
-        <span class="pill"><span class="dot"></span>Agile / Scrum · ITIL · BPMN</span>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn primary" href="https://github.com/Artemisa1109" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Professional Summary</h2>
-      <div class="card col-12">
-        <p class="meta">
-          QA Tester with 1 year of experience in hybrid testing (manual and automation). Skilled in Cypress E2E testing using
-          JavaScript/TypeScript, test design, regression suites, and defect tracking. Strong background in data validation
-          (SQL/Excel) and Agile delivery.
-        </p>
-        <p class="meta">
-          Master’s student in Digital Transformation, with a Diploma in Data Analysis.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Core Skills</h2>
-      <div class="grid">
-        <div class="card col-6">
-          <div class="kicker">QA Automation</div>
-          <div class="tags">
-            <span class="tag">Cypress</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
-            <span class="tag">API testing</span><span class="tag alt">CI/CD fundamentals</span>
-          </div>
-        </div>
-
-        <div class="card col-6">
-          <div class="kicker">Manual QA</div>
-          <div class="tags">
-            <span class="tag">Test cases & plans</span><span class="tag">Regression</span><span class="tag">Smoke / sanity</span>
-            <span class="tag alt">Jira</span><span class="tag alt">Trello</span>
-          </div>
-        </div>
-
-        <div class="card col-6">
-          <div class="kicker">Data & Validation</div>
-          <div class="tags">
-            <span class="tag">SQL</span><span class="tag">Data validation</span><span class="tag alt">Excel (Advanced)</span><span class="tag alt">Power BI</span>
-          </div>
-        </div>
-
-        <div class="card col-6">
-          <div class="kicker">Methodologies</div>
-          <div class="tags">
-            <span class="tag">Agile / Scrum</span><span class="tag">ITIL</span><span class="tag alt">BPMN</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Experience</h2>
-      <div class="grid">
-        <div class="card col-12">
-          <h3>QA Tester (Hybrid) · ColimaSoft</h3>
-          <p class="meta">2025 – Present · Colima, Mexico</p>
-          <ul>
-            <li>Performed manual and automated testing in Agile/Scrum environments.</li>
-            <li>Designed structured test cases and regression suites aligned with functional requirements.</li>
-            <li>Developed and maintained Cypress E2E test flows using JavaScript/TypeScript.</li>
-            <li>Validated database integrity through SQL queries and data analysis.</li>
-            <li>Collaborated with developers to reproduce, document, and track defects using Jira/Trello.</li>
-            <li>Contributed to reducing validation effort by approximately 40% through automation and process improvements.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Projects</h2>
-      <div class="grid">
-
-        <!-- QA Manual + Excel evidence -->
-        <div class="card col-6 equal">
-          <div class="kicker">QA · Manual Testing</div>
-          <h3>Structured Manual Test Design – Web System</h3>
-          <p class="meta">Comprehensive test documentation and validation strategy for a multi-module web application.</p>
-          <ul>
-            <li>Designed and maintained <strong>1,000+ structured test cases</strong> across <strong>24 modules</strong>.</li>
-            <li>Defined preconditions, steps, expected vs. actual results, and traceability.</li>
-            <li>Executed regression, smoke, and functional testing cycles.</li>
-            <li>Improved test organization and execution efficiency by ~40%.</li>
-          </ul>
-
-        <div class="push-bottom">
-
-    <div class="tags">
-        <span class="tag">Test Case Design</span>
-        <span class="tag">Regression</span>
-        <span class="tag">Smoke Testing</span>
-        <span class="tag alt">Defect Tracking</span>
-    </div>
-
-    <div class="cta-row" style="margin-top:16px;">
-        <a class="btn primary"
-           href="assets/QA_Test_Matrices_Portfolio.xlsx?v=2"
-           target="_blank"
-           rel="noreferrer">
-           Download QA Test Matrices (Excel)
-        </a>
-    </div>
-
+<div class="pill-row">
+<span class="pill">Hybrid QA</span>
+<span class="pill">Cypress</span>
+<span class="pill">SQL Validation</span>
+<span class="pill">Agile / Scrum</span>
 </div>
 
-        <!-- QA Automation -->
-        <div class="card col-6 equal">
-          <div class="kicker">QA · Automation</div>
-          <h3>Cypress E2E Automation – TypeScript</h3>
-          <p class="meta">End-to-end automated testing implementation for critical application workflows.</p>
-          <ul>
-            <li>Developed E2E tests using <strong>Cypress + TypeScript</strong>.</li>
-            <li>Automated validation of filters, form submissions, and export functionalities.</li>
-            <li>Implemented reusable commands and stable selector strategies.</li>
-            <li>Integrated automation into Agile testing cycles.</li>
-          </ul>
+<div class="cta-row">
+<a class="btn primary" href="https://github.com/Artemisa1109" target="_blank">GitHub</a>
+</div>
+</section>
 
-          <div class="push-bottom">
-            <div class="tags">
-              <span class="tag">Cypress</span><span class="tag">TypeScript</span><span class="tag alt">E2E Testing</span><span class="tag alt">Automation</span>
-            </div>
-          </div>
-        </div>
+<!-- PROJECTS -->
+<section class="section">
+<h2>Projects</h2>
+<div class="grid">
 
-        <!-- DATA projects with aligned button -->
-        <div class="card col-4 equal">
-          <div class="kicker">Data Analytics</div>
-          <h3>Tuberculosis Global Analysis (1995–2013)</h3>
-          <p class="meta">Global analysis using public health data with Python and Power BI.</p>
-          <div class="push-bottom">
-            <div class="cta-row" style="margin-top:12px;">
-              <a class="btn primary sm" href="https://github.com/Artemisa1109/tb_caso_tuberculosis" target="_blank" rel="noreferrer">View repo</a>
-            </div>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag alt">Power BI</span>
-            </div>
-          </div>
-        </div>
+<div class="card col-6">
+<h3>Structured Manual Test Design – Web System</h3>
+<p class="meta">1,000+ test cases across 24 modules.</p>
+<ul>
+<li>Regression and smoke testing coverage</li>
+<li>Traceability and validation</li>
+<li>~40% efficiency improvement</li>
+</ul>
 
-        <div class="card col-4 equal">
-          <div class="kicker">Data Analytics</div>
-          <h3>Northwind BI Dashboard</h3>
-          <p class="meta">Power BI project: transformations, modeling, and interactive dashboard.</p>
-          <div class="push-bottom">
-            <div class="cta-row" style="margin-top:12px;">
-              <a class="btn primary sm" href="https://github.com/Artemisa1109/Analisis-Northwind-PBI" target="_blank" rel="noreferrer">View repo</a>
-            </div>
-            <div class="tags">
-              <span class="tag alt">Power BI</span><span class="tag">Data modeling</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card col-4 equal">
-          <div class="kicker">Data Analytics</div>
-          <h3>Palmerpenguins Analysis (R)</h3>
-          <p class="meta">Data wrangling and summary statistics using R and tidyverse.</p>
-          <div class="push-bottom">
-            <div class="cta-row" style="margin-top:12px;">
-              <a class="btn primary sm" href="https://github.com/Artemisa1109/Ejercicios-pinguins" target="_blank" rel="noreferrer">View repo</a>
-            </div>
-            <div class="tags">
-              <span class="tag">R</span><span class="tag">dplyr</span><span class="tag alt">tidyverse</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Education & Certifications</h2>
-      <div class="grid">
-
-        <div class="card col-6 equal">
-          <div class="kicker">Education</div>
-          <h3>B.S. in Intelligent Computer Engineering</h3>
-          <p class="meta">University of Colima (UdeC) · Graduated (Mar 2024) · GPA: 9.12/10</p>
-          <div class="push-bottom">
-            <div class="cta-row" style="margin-top:10px;">
-              <a class="btn" href="assets/BSc_Intelligent_Computer_Engineering.pdf" target="_blank" rel="noreferrer">
-                View Bachelor’s Degree Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card col-6">
-          <div class="kicker">Education</div>
-          <h3>M.S. in Digital Transformation</h3>
-          <p class="meta">University of Colima (UdeC) · In progress</p>
-        </div>
-
-        <div class="card col-12 equal">
-          <div class="kicker">Diploma</div>
-          <h3>Diploma in Data Analysis</h3>
-          <p class="meta">University of Colima (UdeC) · 120 hours · 7.5 credits · May 2025 – Sep 2025</p>
-          <div class="push-bottom">
-            <div class="cta-row" style="margin-top:10px;">
-              <a class="btn" href="assets/Diploma_Data_Analysis.pdf" target="_blank" rel="noreferrer">
-                View Diploma Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Languages</h2>
-      <div class="card col-12">
-        <div class="two-col">
-          <div><strong>Spanish</strong><div class="muted">Native</div></div>
-          <div><strong>English</strong><div class="muted">Intermediate</div></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">© 2026 · Diana Artemisa Sepúlveda Patiño</div>
-  </div>
-</body>
-</html>
+<div class="push-bottom">
+<div class="tags">
+<span class="tag">Test Case Design</span>
+<span class="tag
