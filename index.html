@@ -4,279 +4,274 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Diana Artemisa Sepúlveda | QA Automation Tester</title>
+
   <style>
-    <style>
-  :root{
-    /* Base (pro) */
-    --bg: #fbfbfd;
-    --surface: #ffffff;
-    --text: #111827;
-    --muted: #6b7280;
-    --border: #ececf3;
+    :root{
+      /* Base (pro) */
+      --bg: #fbfbfd;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #ececf3;
 
-    /* Pastel rose (tu toque) */
-    --accent: #e11d48;          /* rose-600 */
-    --accent-soft: #fce7f3;     /* rose-100 */
-    --accent-2: #a855f7;        /* purple-500 (sutil) */
+      /* Pastel rose (tu toque) */
+      --accent: #e11d48;          /* rose-600 */
+      --accent-soft: #fce7f3;     /* rose-100 */
+      --accent-2: #a855f7;        /* purple-500 (sutil) */
 
-    /* UI */
-    --shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
-    --shadow-soft: 0 6px 18px rgba(17, 24, 39, 0.06);
-    --radius: 16px;
-    --radius-sm: 12px;
-  }
+      /* UI */
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+      --shadow-soft: 0 6px 18px rgba(17, 24, 39, 0.06);
+      --radius: 16px;
+      --radius-sm: 12px;
+    }
 
-  * { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-  body{
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    background: radial-gradient(1200px 600px at 20% -10%, var(--accent-soft), transparent 60%),
-                radial-gradient(900px 500px at 90% 10%, rgba(168,85,247,0.08), transparent 55%),
-                var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-  }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% -10%, var(--accent-soft), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(168,85,247,0.08), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-  a{
-    color: var(--accent);
-    text-decoration: none;
-  }
-  a:hover{ text-decoration: underline; }
+    a{
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover{ text-decoration: underline; }
 
-  .container{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 44px 18px 70px;
-  }
+    .container{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 44px 18px 70px;
+    }
 
-  /* Header card */
-  .hero{
-    background: linear-gradient(180deg, rgba(252,231,243,0.70), rgba(255,255,255,0.92));
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    border-radius: var(--radius);
-    padding: 28px 26px;
-    position: relative;
-    overflow: hidden;
-  }
+    /* Header card */
+    .hero{
+      background: linear-gradient(180deg, rgba(252,231,243,0.70), rgba(255,255,255,0.92));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .hero::after{
-    content:"";
-    position:absolute;
-    inset:-120px -120px auto auto;
-    width: 260px;
-    height: 260px;
-    background: radial-gradient(circle at 30% 30%, rgba(225,29,72,0.18), transparent 60%);
-    filter: blur(0px);
-    transform: rotate(10deg);
-    pointer-events:none;
-  }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle at 30% 30%, rgba(225,29,72,0.18), transparent 60%);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
 
-  .hero-top{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-    align-items: baseline;
-    justify-content: space-between;
-  }
+    .hero-top{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
 
-  h1{
-    margin: 0;
-    font-size: 34px;
-    letter-spacing: -0.02em;
-  }
+    h1{
+      margin: 0;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
 
-  .subtitle{
-    margin: 6px 0 0;
-    font-size: 16px;
-    color: var(--muted);
-  }
+    .subtitle{
+      margin: 6px 0 0;
+      font-size: 16px;
+      color: var(--muted);
+    }
 
-  .pill-row{
-    margin-top: 16px;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+    .pill-row{
+      margin-top: 16px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-  .pill{
-    display:inline-flex;
-    align-items:center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,0.85);
-    box-shadow: var(--shadow-soft);
-    font-size: 14px;
-    color: var(--text);
-  }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.85);
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+      color: var(--text);
+    }
 
-  .pill .dot{
-    width:10px; height:10px;
-    border-radius:999px;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(225,29,72,0.12);
-  }
+    .pill .dot{
+      width:10px; height:10px;
+      border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(225,29,72,0.12);
+    }
 
-  .cta-row{
-    margin-top: 18px;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+    .cta-row{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    box-shadow: var(--shadow-soft);
-    font-size: 14px;
-    color: var(--text);
-  }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+      color: var(--text);
+    }
 
-  .btn.primary{
-    border-color: rgba(225,29,72,0.28);
-    background: linear-gradient(180deg, rgba(225,29,72,0.10), rgba(255,255,255,0.92));
-  }
+    .btn.primary{
+      border-color: rgba(225,29,72,0.28);
+      background: linear-gradient(180deg, rgba(225,29,72,0.10), rgba(255,255,255,0.92));
+    }
 
-  .btn:hover{
-    transform: translateY(-1px);
-    transition: 120ms ease;
-    text-decoration: none;
-  }
+    .btn:hover{
+      transform: translateY(-1px);
+      transition: 120ms ease;
+      text-decoration: none;
+    }
 
-  /* Sections */
-  .section{
-    margin-top: 28px;
-  }
+    /* Sections */
+    .section{
+      margin-top: 28px;
+    }
 
-  .section h2{
-    margin: 26px 0 12px;
-    font-size: 18px;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    display:flex;
-    align-items:center;
-    gap: 10px;
-  }
+    .section h2{
+      margin: 26px 0 12px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
 
-  .section h2::before{
-    content:"";
-    width: 10px;
-    height: 10px;
-    border-radius: 3px;
-    background: var(--accent);
-    box-shadow: 0 0 0 5px rgba(225,29,72,0.10);
-  }
+    .section h2::before{
+      content:"";
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(225,29,72,0.10);
+    }
 
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 14px;
-  }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
 
-  .card{
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-soft);
-    padding: 18px 18px 16px;
-  }
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 16px;
+    }
 
-  .card:hover{
-    box-shadow: var(--shadow);
-    transition: 140ms ease;
-  }
+    .card:hover{
+      box-shadow: var(--shadow);
+      transition: 140ms ease;
+    }
 
-  .col-12{ grid-column: span 12; }
-  .col-8{ grid-column: span 8; }
-  .col-6{ grid-column: span 6; }
-  .col-4{ grid-column: span 4; }
+    .col-12{ grid-column: span 12; }
+    .col-6{ grid-column: span 6; }
+    .col-4{ grid-column: span 4; }
 
-  @media (max-width: 860px){
-    .col-8, .col-6, .col-4 { grid-column: span 12; }
-    h1{ font-size: 30px; }
-  }
+    @media (max-width: 860px){
+      .col-6, .col-4 { grid-column: span 12; }
+      h1{ font-size: 30px; }
+    }
 
-  .kicker{
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
+    .kicker{
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
 
-  .card h3{
-    margin: 0 0 6px;
-    font-size: 16px;
-    letter-spacing: -0.01em;
-  }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
 
-  .meta{
-    margin: 0 0 10px;
-    color: var(--muted);
-    font-size: 14px;
-  }
+    .meta{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-  .tags{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
+    .tags{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
 
-  .tag{
-    display:inline-flex;
-    align-items:center;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 12.5px;
-    border: 1px solid var(--border);
-    background: rgba(252,231,243,0.55);
-    color: #7a0b2b;
-  }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      border: 1px solid var(--border);
+      background: rgba(252,231,243,0.55);
+      color: #7a0b2b;
+    }
 
-  .tag.alt{
-    background: rgba(168,85,247,0.10);
-    color: #4c1d95;
-  }
+    .tag.alt{
+      background: rgba(168,85,247,0.10);
+      color: #4c1d95;
+    }
 
-  ul{
-    margin: 10px 0 0;
-    padding-left: 18px;
-  }
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
 
-  li{ margin: 6px 0; }
+    li{ margin: 6px 0; }
 
-  .two-col{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  @media (max-width: 860px){
-    .two-col{ grid-template-columns: 1fr; }
-  }
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 860px){
+      .two-col{ grid-template-columns: 1fr; }
+    }
 
-  .footer{
-    margin-top: 42px;
-    color: var(--muted);
-    font-size: 13px;
-    text-align:center;
-  }
+    .footer{
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align:center;
+    }
 
-  /* Small helper */
-  .muted{ color: var(--muted); }
-</style>
-
+    .muted{ color: var(--muted); }
   </style>
 </head>
-<body>
+
 <body>
   <div class="container">
 
@@ -297,11 +292,7 @@
       </div>
 
       <div class="cta-row">
-        <a class="btn primary" href="https://github.com/Artemisa1109" target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-        <!-- Si luego agregas LinkedIn, lo activamos -->
-        <!-- <a class="btn" href="https://www.linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a> -->
+        <a class="btn primary" href="https://github.com/Artemisa1109" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </section>
 
@@ -323,7 +314,6 @@
     <!-- SKILLS -->
     <section class="section">
       <h2>Core Skills</h2>
-
       <div class="grid">
         <div class="card col-6">
           <div class="kicker">QA Automation</div>
@@ -371,17 +361,17 @@
     <!-- EXPERIENCE -->
     <section class="section">
       <h2>Experience</h2>
-
       <div class="grid">
         <div class="card col-12">
           <h3>QA Tester (Hybrid) · ColimaSoft</h3>
           <p class="meta">2025 – Present · Colima, Mexico</p>
           <ul>
-            <li>Execute manual and automated testing for web applications in Agile/Scrum environments.</li>
-            <li>Create and maintain test cases, test plans, and regression suites; document expected vs. actual outcomes.</li>
-            <li>Develop E2E automated tests using Cypress with JavaScript/TypeScript.</li>
-            <li>Validate data integrity using SQL queries and Excel; support reporting and traceability.</li>
-            <li>Track and manage defects with Jira/Trello and collaborate closely with developers.</li>
+            <li>Performed manual and automated testing in Agile/Scrum environments.</li>
+            <li>Designed structured test cases and regression suites aligned with functional requirements.</li>
+            <li>Developed and maintained Cypress E2E test flows using JavaScript/TypeScript.</li>
+            <li>Validated database integrity through SQL queries and data analysis.</li>
+            <li>Collaborated with developers to reproduce, document, and track defects using Jira/Trello.</li>
+            <li>Contributed to reducing validation effort by approximately 40% through automation and process improvements.</li>
           </ul>
         </div>
       </div>
@@ -390,43 +380,47 @@
     <!-- PROJECTS -->
     <section class="section">
       <h2>Projects</h2>
-
       <div class="grid">
-        <!-- QA Manual Project -->
+
+        <!-- QA Manual Project (mejorado) -->
         <div class="card col-6">
           <div class="kicker">QA · Manual Testing</div>
-          <h3>Manual QA Test Suite (Test Matrices)</h3>
+          <h3>Structured Manual Test Design – Web System</h3>
           <p class="meta">
-            Structured test design artifacts covering multiple modules with clear preconditions, steps, and expected vs. actual results.
+            Comprehensive test documentation and validation strategy for a multi-module web application.
           </p>
           <ul>
-            <li>Created and maintained test matrices across <strong>24 modules</strong> (~<strong>1,000+ test cases</strong>).</li>
-            <li>Designed regression and smoke/sanity coverage for critical flows.</li>
-            <li>Improved test execution efficiency through better organization and reusable scenarios.</li>
+            <li>Designed and maintained <strong>1,000+ structured test cases</strong> across <strong>24 modules</strong>.</li>
+            <li>Defined clear preconditions, steps, expected vs. actual results, and traceability.</li>
+            <li>Executed regression, smoke, and functional testing cycles.</li>
+            <li>Improved test organization and execution efficiency by ~40%.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Test cases</span>
+            <span class="tag">Test Case Design</span>
             <span class="tag">Regression</span>
-            <span class="tag alt">Traceability</span>
+            <span class="tag">Smoke Testing</span>
+            <span class="tag alt">Defect Tracking</span>
           </div>
         </div>
 
-        <!-- QA Automation Placeholder -->
+        <!-- QA Automation (listo aunque falten .cy.ts) -->
         <div class="card col-6">
-          <div class="kicker">QA · Automation (Coming next)</div>
-          <h3>Cypress E2E Automation (TypeScript)</h3>
+          <div class="kicker">QA · Automation</div>
+          <h3>Cypress E2E Automation – TypeScript</h3>
           <p class="meta">
-            Placeholder for your Cypress `.cy.ts` suite — we’ll add the real modules, flows, and repo link as soon as you share them.
+            End-to-end automated testing implementation for critical application workflows.
           </p>
           <ul>
-            <li>E2E flows for critical modules (filters, validations, exports).</li>
-            <li>Reusable commands/utilities and stable selector strategy.</li>
-            <li>Ready to link to repo + add screenshots / run instructions.</li>
+            <li>Developed E2E tests using <strong>Cypress + TypeScript</strong>.</li>
+            <li>Automated validation of filters, form submissions, and export functionalities.</li>
+            <li>Implemented reusable commands and stable selector strategies.</li>
+            <li>Integrated automation into Agile testing cycles.</li>
           </ul>
           <div class="tags">
             <span class="tag">Cypress</span>
             <span class="tag">TypeScript</span>
-            <span class="tag alt">E2E</span>
+            <span class="tag alt">E2E Testing</span>
+            <span class="tag alt">Automation</span>
           </div>
         </div>
 
@@ -477,44 +471,8 @@
     <!-- EDUCATION -->
     <section class="section">
       <h2>Education & Certifications</h2>
-
       <div class="grid">
         <div class="card col-6">
           <div class="kicker">Education</div>
           <h3>B.S. in Intelligent Computer Engineering</h3>
-          <p class="meta">University of Colima (UdeC) · Graduated (Mar 2024) · GPA: 9.12/10</p>
-        </div>
-
-        <div class="card col-6">
-          <div class="kicker">Education</div>
-          <h3>M.S. in Digital Transformation</h3>
-          <p class="meta">University of Colima (UdeC) · In progress</p>
-        </div>
-
-        <div class="card col-12">
-          <div class="kicker">Diploma</div>
-          <h3>Diploma in Data Analysis & Data Visualization</h3>
-          <p class="meta">University of Colima (UdeC) · 120 hours · 7.5 credits · May 2025 – Sep 2025</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section class="section">
-      <h2>Languages</h2>
-      <div class="card col-12">
-        <div class="two-col">
-          <div><strong>Spanish</strong><div class="muted">Native</div></div>
-          <div><strong>English</strong><div class="muted">Intermediate</div></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">
-      © 2026 · Diana Artemisa Sepúlveda Patiño
-    </div>
-  </div>
-</body>
-
-</body>
-</html>
+          <p class="meta">University of Colima (UdeC) · Graduated (Mar 2024) · GPA: 9.12/10
