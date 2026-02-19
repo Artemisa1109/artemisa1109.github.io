@@ -109,18 +109,32 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
 
 /* Sections */
 .section{margin-top:34px}
+
+/* Section headers as "pill" */
 .section h2{
-  font-size:18px;
-  margin:0 0 14px;
+  grid-column: span 12;
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.85);
+  box-shadow: var(--shadow-soft);
+
+  font-size: 14px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+
   display:flex;
   align-items:center;
-  gap:10px;
+  justify-content: space-between;
 }
-.section h2::before{
-  content:"";
-  width:10px;height:10px;border-radius:3px;
-  background:var(--accent);
-  box-shadow:0 0 0 5px rgba(225,29,72,.10);
+
+.section h2 .hint{
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 /* Grid */
@@ -193,7 +207,7 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
   color:var(--muted);
 }
 
-/* ===== Data Analytics subheader inside Projects ===== */
+/* Data Analytics subheader inside Quality Assurance */
 .subhead{
   grid-column: span 12;
   margin-top: 4px;
@@ -312,7 +326,7 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
 
   <!-- SUMMARY -->
   <section class="section">
-    <h2>Professional Summary</h2>
+    <h2>Professional Summary <span class="hint">Overview</span></h2>
     <div class="card col-12">
       <p class="meta">
         QA Tester with 1 year of experience in hybrid testing (manual and automation). Skilled in Cypress E2E testing using
@@ -325,9 +339,9 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- QUALITY ASSURANCE -->
   <section class="section">
-    <h2>Projects</h2>
+    <h2>Quality Assurance <span class="hint">Manual + Automation + Analytics</span></h2>
     <div class="grid">
 
       <!-- Row 1: QA Manual (6) + QA Automation (6) -->
@@ -351,7 +365,7 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
           </div>
 
           <div class="cta-row" style="margin-top:16px;">
-            <a class="btn primary" href="assets/QA_Test_Matrices_Portfolio.xlsx?v=6" target="_blank" rel="noreferrer">
+            <a class="btn primary" href="assets/QA_Test_Matrices_Portfolio.xlsx?v=7" target="_blank" rel="noreferrer">
               Download QA Test Matrices (Excel)
             </a>
           </div>
@@ -388,7 +402,7 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
         </div>
       </div>
 
-      <!-- Subheader for Data Analytics -->
+      <!-- Data Analytics subheader -->
       <div class="subhead">
         <h3>Data Analytics</h3>
         <div class="hint">Selected repositories</div>
@@ -447,8 +461,19 @@ h1{margin:0;font-size:34px;letter-spacing:-0.02em}
 
   <!-- EDUCATION -->
   <section class="section">
-    <h2>Education & Certifications</h2>
+    <h2>Education & Certifications <span class="hint">Verified documents</span></h2>
     <div class="grid">
+
+      <!-- Master's Degree (added) -->
+      <div class="card col-6">
+        <h3>M.S. in Digital Transformation</h3>
+        <p class="meta">University of Colima (UdeC) · In progress</p>
+        <div class="tags">
+          <span class="tag">Digital Strategy</span>
+          <span class="tag alt">Innovation</span>
+          <span class="tag alt">Process Improvement</span>
+        </div>
+      </div>
 
       <div class="card col-6">
         <h3>B.S. in Intelligent Computer Engineering</h3>
